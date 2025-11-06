@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { NeuralNetwork } from './Neuralnetwork';
 import { ArrowDown, Download, Brain } from 'lucide-react';
 
 const Hero = () => {
@@ -22,24 +25,15 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#0A0F1F] to-black"
       onMouseMove={handleMouseMove}
     >
-      {/* Decorative fallback background (lightweight CSS/SVG) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <svg className="w-full h-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="g1" cx="30%" cy="30%">
-              <stop offset="0%" stopColor="#0ff" stopOpacity="0.06" />
-              <stop offset="60%" stopColor="#0ff" stopOpacity="0.01" />
-              <stop offset="100%" stopColor="#0ff" stopOpacity="0" />
-            </radialGradient>
-            <radialGradient id="g2" cx="70%" cy="70%">
-              <stop offset="0%" stopColor="#8A2BE2" stopOpacity="0.06" />
-              <stop offset="60%" stopColor="#8A2BE2" stopOpacity="0.01" />
-              <stop offset="100%" stopColor="#8A2BE2" stopOpacity="0" />
-            </radialGradient>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#g1)" />
-          <rect width="100%" height="100%" fill="url(#g2)" />
-        </svg>
+      {/* 3D background (Neural network) */}
+      <div className="absolute inset-0 z-0">
+        <Canvas camera={{ position: [0, 0, 8], fov: 75 }}>
+          <Suspense fallback={null}>
+            <ambientLight intensity={0.5} />
+            <NeuralNetwork mousePosition={mousePosition} />
+            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
+          </Suspense>
+        </Canvas>
       </div>
 
       {/* Main text content */}

@@ -128,3 +128,5 @@ export function NeuralNetwork({ mousePosition }) {
     </>
   );
 }
+
+export default NeuralNetwork;
