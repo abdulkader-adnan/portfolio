@@ -160,9 +160,14 @@ export function Projects() {
         <div className="mt-16 text-center">
           <div className="relative inline-block">
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg blur opacity-50"></div>
-            <button className="relative px-8 py-4 bg-[#0A0F1F] border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition-all duration-300">
+            <a
+              href="https://github.com/abdulkader-adnan#-projects-spotlight"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-block px-8 py-4 bg-[#0A0F1F] border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition-all duration-300 text-center"
+            >
               View All Projects on GitHub
-            </button>
+            </a>
           </div>
         </div>
       </div>
