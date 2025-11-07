@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { NeuralNetwork } from './Neuralnetwork';
 import { ArrowDown, Download, Brain } from 'lucide-react';
+import cvFile from '../../public/abbodCV.pdf';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -72,8 +73,13 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
 
-          <a href="my-app\src\assets\abbodCV.pdf" download="" class="px-8 py-3 border-2 border-[#00ff94] text-[#00ff94] font-bold rounded-lg hover:bg-[#00ff94]/10 transition-all transform hover:scale-105 neon-green"
-          >Download CV</a>
+          <a
+            href={cvFile}
+            download="Abdulkader_Adnan_CV.pdf"
+            className="px-8 py-3 border-2 border-[#00ff94] text-[#00ff94] font-bold rounded-lg hover:bg-[#00ff94]/10 transition-all transform hover:scale-105 neon-green"
+          >
+            Download CV
+          </a>
         </div>
       </div>
 
