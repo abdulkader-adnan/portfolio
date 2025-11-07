@@ -72,12 +72,8 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
 
-          <button className="group relative px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/50">
-            <span className="flex items-center gap-2">
-              <Download className="w-5 h-5" />
-              Download CV
-            </span>
-          </button>
+          <a href="my-app\src\assets\abbodCV.pdf" download="" class="px-8 py-3 border-2 border-[#00ff94] text-[#00ff94] font-bold rounded-lg hover:bg-[#00ff94]/10 transition-all transform hover:scale-105 neon-green"
+          >Download CV</a>
         </div>
       </div>
 
