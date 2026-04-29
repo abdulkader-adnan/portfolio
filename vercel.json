@@ -1,10 +1,19 @@
 {
   "version": 2,
-  "root": "my-app",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "builds": [
+    {
+      "src": "my-app/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "my-app/dist",
+        "buildCommand": "npm run build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/my-app/index.html"
+    }
+  ]
 }
