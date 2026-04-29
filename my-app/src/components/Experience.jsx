@@ -131,9 +131,9 @@ const Experience = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 rounded-lg blur animate-pulse"></div>
             <div className="relative bg-[#0A0F1F] border-2 border-cyan-500/50 rounded-lg p-6">
               <p className="text-gray-300 text-lg">
-                <span className="text-cyan-400 font-semibold\">Bachelor of Science</span> in Computer Science at MIU (Sept 2023 - July 2027) with GPA{' '}
-                <span className="text-purple-400 font-semibold\">3.66/4.0</span>. Specializing in{' '}
-                <span className=\"text-cyan-400 font-semibold\">AI and Machine Learning</span>
+                <span className="text-cyan-400 font-semibold">Bachelor of Science</span> in Computer Science at MIU (Sept 2023 - July 2027) with GPA{' '}
+                <span className="text-purple-400 font-semibold">3.66/4.0</span>. Specializing in{' '}
+                <span className="text-cyan-400 font-semibold">AI and Machine Learning</span>
               </p>
             </div>
           </div>
