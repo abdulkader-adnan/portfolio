@@ -1,60 +1,52 @@
 import { useState } from 'react';
-import { Car, Bus, Network, Link, Brain, Cpu, ExternalLink, Github } from 'lucide-react';
+import { Car, Bus, Link, Brain, Cpu, ExternalLink, Github, Eye } from 'lucide-react';
 
 export function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const projects = [
     {
-      title: 'AI-Powered Design Assistant',
+      title: 'Laptop Price Prediction',
       description:
-        'Experimental project using generative AI to produce 3D shapes and adaptive UIs based on user prompts. Leverages machine learning to create intelligent design recommendations.',
-      tech: ['Python', 'TensorFlow', 'Three.js', 'React'],
-      icon: <Brain className="w-8 h-8" />,
+        'End-to-end machine learning project for predicting laptop prices using regression techniques. Implemented data preprocessing, feature engineering, and EDA. Trained and compared multiple models including Linear Regression and Decision Trees.',
+      tech: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib'],
+      icon: <Cpu className="w-8 h-8" />,
       gradient: 'from-cyan-500 via-blue-500 to-purple-600',
-      category: 'ai',
+      category: 'ml',
+      year: '2026',
     },
     {
-      title: 'AI Dataset Classification',
+      title: 'Face Recognition Attendance System',
       description:
-        'Machine learning classification system using Orange Data Mining. Implemented advanced algorithms for pattern recognition and data analysis with high accuracy rates.',
-      tech: ['Python', 'Orange Data Mining', 'ML'],
-      icon: <Cpu className="w-8 h-8" />,
+        'Developed an automated attendance system using face recognition and machine learning. Implemented face detection and recognition using trained models with a pipeline for real-time image processing and data recording.',
+      tech: ['Python', 'OpenCV', 'Machine Learning', 'Computer Vision'],
+      icon: <Eye className="w-8 h-8" />,
       gradient: 'from-purple-500 via-pink-500 to-red-500',
       category: 'ai',
     },
     {
       title: 'Full Stack Car Rental Website',
       description:
-        'Smart admin dashboard and booking system with real-time inventory management. Features advanced search, payment integration, and analytics.',
-      tech: ['Node.js', 'MongoDB', 'React', 'Express'],
+        'Responsive web application for booking vehicle rentals with admin dashboard and database integration. Features include inventory management, search functionality, and user booking system.',
+      tech: ['Node.js', 'MongoDB', 'React', 'Express', 'JavaScript'],
       icon: <Car className="w-8 h-8" />,
       gradient: 'from-green-500 via-emerald-500 to-teal-500',
       category: 'fullstack',
     },
     {
-      title: 'Bus Ticket Management System',
+      title: 'Bus Ticket Booking System',
       description:
-        'AI-assisted route optimization system for efficient bus scheduling. Includes booking management, seat selection, and automated notification system.',
-      tech: ['Java', 'MySQL', 'AI Optimization'],
+        'Route-based ticket booking system with payment simulation and performance optimization. Features seat selection, reservation management, and route optimization algorithms.',
+      tech: ['Java', 'MySQL', 'Data Structures'],
       icon: <Bus className="w-8 h-8" />,
       gradient: 'from-orange-500 via-yellow-500 to-amber-500',
       category: 'fullstack',
     },
     {
-      title: 'Enterprise Network Simulation',
-      description:
-        '3D-visualized network topology with VPN, NAT, and OSPF configuration. Complete enterprise-level network design with security implementations.',
-      tech: ['Cisco Packet Tracer', 'VPN', 'OSPF', 'NAT'],
-      icon: <Network className="w-8 h-8" />,
-      gradient: 'from-blue-500 via-indigo-500 to-purple-500',
-      category: 'network',
-    },
-    {
       title: 'URL Shortener',
       description:
-        'High-performance URL shortening service with optimized algorithms for fast redirect resolution. Features analytics and custom link management.',
-      tech: ['C++', 'Algorithm Design', 'Data Structures'],
+        'High-performance URL shortening service using optimized hash map algorithms for fast redirect resolution. Implements efficient data structures for URL management and retrieval.',
+      tech: ['C++', 'Algorithm Design', 'Hash Tables', 'Data Structures'],
       icon: <Link className="w-8 h-8" />,
       gradient: 'from-pink-500 via-rose-500 to-red-500',
       category: 'algorithm',
@@ -83,11 +75,11 @@ export function Projects() {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            AI & Projects Showcase
+            ML & AI Projects
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Intelligent systems and innovative solutions powered by AI, data, and cutting-edge
-            technology
+            Machine learning models, AI systems, and full-stack applications focused on intelligent
+            data processing and automation
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto rounded-full mt-4"></div>
         </div>

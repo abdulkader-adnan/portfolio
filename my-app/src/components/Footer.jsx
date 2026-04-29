@@ -19,9 +19,14 @@ const Footer = () => {
               <Brain className="w-8 h-8 text-cyan-400" />
               <h3 className="text-xl font-bold text-white">Abdulkader Adnan</h3>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              AI Software Engineer crafting intelligent systems and immersive experiences.
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              AI Software Engineer specializing in machine learning, data science, and full-stack development.
             </p>
+            <div className="space-y-2 text-gray-400 text-sm">
+              <p>📍 Obour City, Egypt</p>
+              <p>📧 abdulkader2307019@miuegypt.edu.eg</p>
+              <p>📱 +20 1289994008</p>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -48,13 +53,17 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Connect</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://github.com/abdulkader2307019"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-cyan-500/10 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/20 hover:border-cyan-500 transition-all duration-300 group"
               >
                 <Github className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/abdulkader-adnan"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-purple-500/10 border border-purple-500/30 rounded-lg hover:bg-purple-500/20 hover:border-purple-500 transition-all duration-300 group"
               >
                 <Linkedin className="w-5 h-5 text-purple-400 group-hover:scale-110 transition-transform" />

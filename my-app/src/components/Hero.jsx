@@ -55,9 +55,9 @@ const Hero = () => {
         </p>
 
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Building intelligent systems that think, move, and design.
+          Building intelligent AI and ML systems with data-driven insights.
           <br />
-          <span className="text-purple-400">Where logic meets imagination</span>
+          <span className="text-purple-400">Turning algorithms into solutions</span>
         </p>
 
         {/* Buttons */}

@@ -6,11 +6,11 @@ export default function About() {
   const sectionRef = useRef(null);
 
   const skills = [
-    { name: 'AI Development', level: 90, icon: <Cpu className="w-6 h-6" />, color: 'from-cyan-500 to-blue-500' },
+    { name: 'Machine Learning & AI', level: 85, icon: <Cpu className="w-6 h-6" />, color: 'from-cyan-500 to-blue-500' },
+    { name: 'Python Development', level: 88, icon: <Code2 className="w-6 h-6" />, color: 'from-green-500 to-emerald-500' },
     { name: 'Backend Engineering', level: 85, icon: <Database className="w-6 h-6" />, color: 'from-purple-500 to-pink-500' },
-    { name: 'Programming', level: 88, icon: <Code2 className="w-6 h-6" />, color: 'from-green-500 to-emerald-500' },
-    { name: '3D & Graphics', level: 80, icon: <Box className="w-6 h-6" />, color: 'from-orange-500 to-red-500' },
-    { name: 'Networking', level: 75, icon: <Network className="w-6 h-6" />, color: 'from-blue-500 to-cyan-500' },
+    { name: 'Data Analysis & EDA', level: 82, icon: <Box className="w-6 h-6" />, color: 'from-orange-500 to-red-500' },
+    { name: 'JavaScript & React', level: 80, icon: <Code2 className="w-6 h-6" />, color: 'from-pink-500 to-rose-500' },
     { name: 'Version Control', level: 85, icon: <GitBranch className="w-6 h-6" />, color: 'from-yellow-500 to-orange-500' },
   ];
 
@@ -59,13 +59,11 @@ export default function About() {
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg blur opacity-25"></div>
               <div className="relative bg-[#0A0F1F] border border-cyan-500/30 rounded-lg p-8">
                 <p className="text-gray-300 leading-relaxed text-lg">
-                  <span className="text-cyan-400 font-semibold">AI Software Engineer</span> with strong foundations in
-                  backend systems, 3D programming, and data-driven design. Experienced in building intelligent web
-                  systems, integrating AI into user experiences, and developing scalable full-stack applications.
+                  <span className="text-cyan-400 font-semibold">AI & ML Student Engineer</span> at Misr International University with expertise in machine learning, data analysis, and full-stack development. Focused on building intelligent systems using Python, scikit-learn, and modern AI techniques. Experienced in computer vision, data preprocessing, and deploying ML models.
                 </p>
                 <div className="mt-6 p-4 bg-black/40 rounded-lg border border-purple-500/30">
                   <p className="text-purple-400 italic text-center font-light">
-                    "Where logic meets imagination — powering 3D, AI, and code."
+                    "Transforming data into intelligent solutions with AI and machine learning."
                   </p>
                 </div>
               </div>
@@ -74,16 +72,16 @@ export default function About() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="bg-[#0A0F1F] border border-cyan-500/30 rounded-lg p-4 hover:border-cyan-500 transition-all duration-300">
-                <div className="text-3xl font-bold text-cyan-400">3+</div>
-                <div className="text-sm text-gray-400">Years Coding</div>
+                <div className="text-3xl font-bold text-cyan-400">3.66</div>
+                <div className="text-sm text-gray-400">GPA at MIU</div>
               </div>
               <div className="bg-[#0A0F1F] border border-purple-500/30 rounded-lg p-4 hover:border-purple-500 transition-all duration-300">
-                <div className="text-3xl font-bold text-purple-400">10+</div>
-                <div className="text-sm text-gray-400">Projects</div>
+                <div className="text-3xl font-bold text-purple-400">5+</div>
+                <div className="text-sm text-gray-400">AI/ML Projects</div>
               </div>
               <div className="bg-[#0A0F1F] border border-cyan-500/30 rounded-lg p-4 hover:border-cyan-500 transition-all duration-300">
-                <div className="text-3xl font-bold text-cyan-400">AI</div>
-                <div className="text-sm text-gray-400">Focused</div>
+                <div className="text-3xl font-bold text-cyan-400">2027</div>
+                <div className="text-sm text-gray-400">Graduation Year</div>
               </div>
             </div>
           </div>
@@ -132,23 +130,23 @@ export default function About() {
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition-opacity duration-300"></div>
             <div className="relative bg-[#0A0F1F] border border-cyan-500/30 rounded-lg p-6 h-full">
               <h3 className="text-xl font-bold text-cyan-400 mb-3">Languages</h3>
-              <p className="text-gray-300">Python, C++, Java, JavaScript, TypeScript</p>
+              <p className="text-gray-300">Python, C++, Java, JavaScript, HTML5, CSS</p>
             </div>
           </div>
 
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition-opacity duration-300"></div>
             <div className="relative bg-[#0A0F1F] border border-purple-500/30 rounded-lg p-6 h-full">
-              <h3 className="text-xl font-bold text-purple-400 mb-3">Technologies</h3>
-              <p className="text-gray-300">Node.js, MongoDB, Three.js, TensorFlow, React</p>
+              <h3 className="text-xl font-bold text-purple-400 mb-3">AI & ML Stack</h3>
+              <p className="text-gray-300">Scikit-learn, Pandas, NumPy, Matplotlib, OpenCV, Data Preprocessing</p>
             </div>
           </div>
 
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition-opacity duration-300"></div>
             <div className="relative bg-[#0A0F1F] border border-cyan-500/30 rounded-lg p-6 h-full">
-              <h3 className="text-xl font-bold text-cyan-400 mb-3">Tools</h3>
-              <p className="text-gray-300">Git, Orange Data Mining, Cisco Packet Tracer</p>
+              <h3 className="text-xl font-bold text-cyan-400 mb-3">Backend & Databases</h3>
+              <p className="text-gray-300">Node.js, Express, MongoDB, MySQL, Git, GitHub</p>
             </div>
           </div>
         </div>

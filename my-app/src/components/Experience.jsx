@@ -6,11 +6,20 @@ const Experience = () => {
     {
       title: 'Co-Assistant',
       organization: 'Department of Computer Science, MIU',
-      period: '2023 - Present',
+      period: 'Sep 2024 - Jan 2025',
       description:
-        'Assisted in teaching logic, data structures, and programming. Provided algorithmic debugging and code analysis support to students.',
+        'Assisted faculty in Introduction to Computer Science Programming to first-year students. Reviewed and provided feedback on students\' code and logic implementations.',
       icon: <Briefcase className="w-6 h-6" />,
       color: 'from-cyan-500 to-blue-500',
+    },
+    {
+      title: 'CRM Department Intern',
+      organization: 'Dr. Greiche Glass Company',
+      period: 'July 2025',
+      description:
+        'Completed one-month internship in CRM department. Gained practical exposure to customer management systems and data handling workflows.',
+      icon: <Briefcase className="w-6 h-6" />,
+      color: 'from-purple-500 to-pink-500',
     },
   ];
 
@@ -44,7 +53,7 @@ const Experience = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            Experience & Research
+            Experience & Achievements
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto rounded-full"></div>
         </div>
@@ -92,7 +101,7 @@ const Experience = () => {
         <div>
           <h3 className="text-2xl font-bold text-purple-400 mb-8 flex items-center gap-3">
             <Award className="w-7 h-7" />
-            Research & Certifications
+            Achievements & Activities
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {research.map((item, index) => (
@@ -122,10 +131,9 @@ const Experience = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 rounded-lg blur animate-pulse"></div>
             <div className="relative bg-[#0A0F1F] border-2 border-cyan-500/50 rounded-lg p-6">
               <p className="text-gray-300 text-lg">
-                Currently pursuing{' '}
-                <span className="text-cyan-400 font-semibold">AI specialization</span> with focus on
-                <span className="text-purple-400 font-semibold"> intelligent systems</span> and
-                <span className="text-cyan-400 font-semibold"> 3D integration</span>
+                <span className="text-cyan-400 font-semibold\">Bachelor of Science</span> in Computer Science at MIU (Sept 2023 - July 2027) with GPA{' '}
+                <span className="text-purple-400 font-semibold\">3.66/4.0</span>. Specializing in{' '}
+                <span className=\"text-cyan-400 font-semibold\">AI and Machine Learning</span>
               </p>
             </div>
           </div>
