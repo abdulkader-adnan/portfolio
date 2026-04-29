@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "buildCommand": "cd my-app && npm run build",
+  "outputDirectory": "my-app/dist",
+  "framework": "vite",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
