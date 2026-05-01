@@ -53,7 +53,7 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Connect</h4>
             <div className="flex gap-4">
               <a
-                href="https://github.com/abdulkader2307019"
+                href="https://github.com/abdulkader-adnan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-cyan-500/10 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/20 hover:border-cyan-500 transition-all duration-300 group"
@@ -61,7 +61,7 @@ const Footer = () => {
                 <Github className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="https://www.linkedin.com/in/abdulkader-adnan"
+                href="https://www.linkedin.com/in/abdulkader-adnan-262486349/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-purple-500/10 border border-purple-500/30 rounded-lg hover:bg-purple-500/20 hover:border-purple-500 transition-all duration-300 group"

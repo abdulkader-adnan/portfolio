@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, MessageSquare, Sparkles } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [chatMessage, setChatMessage] = useState('');
@@ -7,6 +8,39 @@ const Contact = () => {
     { role: 'bot', message: "Hello! I'm Abdulkader's AI assistant. How can I help you today?" }
   ]);
   const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  useEffect(() => {
+    emailjs.init('YOUR_PUBLIC_KEY');
+  }, []);
+
+  const generateAIResponse = (userMessage) => {
+    const messageLower = userMessage.toLowerCase();
+    
+    // Context-aware responses
+    if (messageLower.includes('project') || messageLower.includes('work')) {
+      return "I'd love to help! Abdulkader has worked on amazing projects including ML models for laptop price prediction, face recognition systems, and full-stack web applications. What specific project interests you?";
+    }
+    if (messageLower.includes('experience') || messageLower.includes('background')) {
+      return "Abdulkader is an AI Software Engineer with expertise in Machine Learning, Python, and full-stack development. He's a student at Misr International University with a 3.66/4.0 GPA, specializing in AI and ML.";
+    }
+    if (messageLower.includes('contact') || messageLower.includes('email') || messageLower.includes('message')) {
+      return "Perfect! I can help you send a message directly to Abdulkader. Would you like to use the contact form?";
+    }
+    if (messageLower.includes('skill') || messageLower.includes('technology') || messageLower.includes('tech')) {
+      return "Abdulkader is skilled in Python, C++, Java, JavaScript, Machine Learning (Scikit-learn, Pandas, NumPy), Computer Vision with OpenCV, and full-stack development with Node.js and MongoDB.";
+    }
+    if (messageLower.includes('hire') || messageLower.includes('opportunity') || messageLower.includes('work')) {
+      return "That's great to hear! Abdulkader is open to opportunities. Would you like to send him a message with the details?";
+    }
+    if (messageLower.includes('hello') || messageLower.includes('hi') || messageLower.includes('hey')) {
+      return "Hey! I'm Abdulkader's AI assistant. I can help you learn about his projects, skills, experience, or you can send him a direct message. What would you like to know?";
+    }
+    
+    return "That's interesting! Would you like to send Abdulkader a message with more details, or would you like to know more about his work and experience?";
+  };
 
   const handleChatSubmit = (e) => {
     e.preventDefault();
@@ -15,17 +49,41 @@ const Contact = () => {
     setChatHistory((prev) => [...prev, { role: 'user', message: chatMessage }]);
 
     setTimeout(() => {
-      const responses = [
-        "I'd be happy to help! Let me connect you with the contact form.",
-        'Great question! Would you like to send Abdulkader a message?',
-        'I can help you get in touch with Abdulkader. Ready to send a message?'
-      ];
-      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-      setChatHistory((prev) => [...prev, { role: 'bot', message: randomResponse }]);
+      const aiResponse = generateAIResponse(chatMessage);
+      setChatHistory((prev) => [...prev, { role: 'bot', message: aiResponse }]);
       setShowForm(true);
-    }, 1000);
+    }, 800);
 
     setChatMessage('');
+  };
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      await emailjs.send('service_portfolio', 'template_portfolio', {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'abdulkader2307019@miuegypt.edu.eg',
+      });
+      setSubmitMessage('✨ Message sent successfully! Abdulkader will get back to you soon.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setChatHistory((prev) => [...prev, { role: 'bot', message: '✨ Your message has been sent! Abdulkader will respond as soon as possible.' }]);
+    } catch (error) {
+      setSubmitMessage('❌ Failed to send message. Please try again.');
+      console.error('EmailJS error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -153,11 +211,15 @@ const Contact = () => {
                   <h3 className="text-2xl font-bold text-white">Send a Message</h3>
                 </div>
 
-                <form className="space-y-4">
+                <form onSubmit={handleFormSubmit} className="space-y-4">
                   <div>
                     <label className="block text-gray-400 mb-2 text-sm">Your Name</label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleFormChange}
+                      required
                       className="w-full bg-black/50 border border-cyan-500/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
                       placeholder="John Doe"
                     />
@@ -167,6 +229,10 @@ const Contact = () => {
                     <label className="block text-gray-400 mb-2 text-sm">Your Email</label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleFormChange}
+                      required
                       className="w-full bg-black/50 border border-cyan-500/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
                       placeholder="john@example.com"
                     />
@@ -176,6 +242,10 @@ const Contact = () => {
                     <label className="block text-gray-400 mb-2 text-sm">Subject</label>
                     <input
                       type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleFormChange}
+                      required
                       className="w-full bg-black/50 border border-cyan-500/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
                       placeholder="Project Inquiry"
                     />
@@ -184,18 +254,29 @@ const Contact = () => {
                   <div>
                     <label className="block text-gray-400 mb-2 text-sm">Message</label>
                     <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleFormChange}
+                      required
                       rows="6"
                       className="w-full bg-black/50 border border-cyan-500/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
                       placeholder="Tell me about your project..."
                     ></textarea>
                   </div>
 
+                  {submitMessage && (
+                    <div className={`p-3 rounded-lg text-center ${submitMessage.includes('✨') ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
+                      {submitMessage}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Send className="w-5 h-5" />
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </div>
