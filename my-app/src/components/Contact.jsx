@@ -87,7 +87,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-b from-black via-[#0A0F1F] to-black">
+    <section id="contact" className="relative py-24 px-6 bg-gradient-to-b from-black via-[#0A0F1F] to-black">
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"

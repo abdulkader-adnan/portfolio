@@ -48,7 +48,7 @@ const Experience = () => {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-b from-black via-[#0A0F1F] to-black">
+    <section id="experience" className="relative py-24 px-6 bg-gradient-to-b from-black via-[#0A0F1F] to-black">
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">

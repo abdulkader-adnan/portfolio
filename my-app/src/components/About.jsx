@@ -31,6 +31,7 @@ export default function About() {
 
   return (
     <section
+      id="about"
       ref={sectionRef}
       className="relative py-24 px-6 bg-gradient-to-b from-black via-[#0A0F1F] to-black overflow-hidden"
     >
