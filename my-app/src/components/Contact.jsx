@@ -13,7 +13,7 @@ const Contact = () => {
   const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
-    emailjs.init('YOUR_PUBLIC_KEY');
+    emailjs.init('ROTwJTsyD0dR7n1M-');
   }, []);
 
   const generateAIResponse = (userMessage) => {
@@ -68,7 +68,7 @@ const Contact = () => {
     setSubmitMessage('');
 
     try {
-      await emailjs.send('service_portfolio', 'template_portfolio', {
+      await emailjs.send('service_bfbmjxd', 'template_dyd7wa9', {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
